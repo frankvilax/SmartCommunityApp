@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context="com.example.smartcommunityapp.MainActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:text="Register"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText_User_EmailID"
+        android:hint="Email"
+        android:gravity="center"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText_User_Password"
+        android:hint="Password"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:layout_below="@+id/EditText_User_EmailID"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_SignUp"
+        android:layout_below="@+id/EditText_User_Password"
+        android:text="Sign Up"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_LoginActivity"
+        android:layout_below="@+id/Button_SignUp"
+        android:text="Already Registered"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>
