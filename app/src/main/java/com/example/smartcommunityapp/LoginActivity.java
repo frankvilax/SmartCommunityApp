@@ -2,10 +2,12 @@ package com.example.smartcommunityapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,6 +56,8 @@ public class LoginActivity extends AppCompatActivity {
         // Assign FirebaseAuth instance to FirebaseAuth object.
         firebaseAuth = FirebaseAuth.getInstance();
 
+
+        // Checking if user already logged in before and not logged out properly.
         if(firebaseAuth.getCurrentUser() != null){
 
             // Finishing current Login Activity.
@@ -64,10 +68,12 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+
         // Adding click listener to login button.
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 // Calling method CheckEditTextIsEmptyOrNot().
                 CheckEditTextIsEmptyOrNot();
 
@@ -84,10 +90,28 @@ public class LoginActivity extends AppCompatActivity {
                     // If  EditTextEmptyCheck == false then toast display on screen.
                     Toast.makeText(LoginActivity.this, "Please Fill All the Fields", Toast.LENGTH_LONG).show();
                 }
+
+
+            }
+        });
+
+        // Adding click listener to Sign up button.
+        SignUP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Closing current activity.
+                finish();
+
+                // Opening the Main Activity .
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+
             }
         });
     }
 
+    // Creating method to check EditText is empty or not.
     public void CheckEditTextIsEmptyOrNot(){
 
         // Getting value form Email's EditText and fill into EmailHolder string variable.
@@ -154,4 +178,5 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
     }
+
 }

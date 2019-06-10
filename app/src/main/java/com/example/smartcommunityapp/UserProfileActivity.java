@@ -24,7 +24,6 @@ public class UserProfileActivity extends AppCompatActivity {
 
     // Creating FirebaseAuth.
     FirebaseUser firebaseUser;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +51,11 @@ public class UserProfileActivity extends AppCompatActivity {
 
         }
 
+        // Adding firebaseAuth current user info into firebaseUser object.
         firebaseUser = firebaseAuth.getCurrentUser();
 
-        userEmailShow.setText("You are now ready to collect!\n" + firebaseUser.getEmail());
+        // Getting logged in user email from firebaseUser.getEmail() method and set into TextView.
+        userEmailShow.setText("Successfully Logged In with" + firebaseUser.getEmail());
 
         // Adding click listener on logout button.
         logout.setOnClickListener(new View.OnClickListener() {
@@ -76,5 +77,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 }
