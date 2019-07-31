@@ -10,18 +10,28 @@
         android:id="@+id/user_email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:textSize="20dp"
-        android:textColor="#000"/>
+        android:textColor="#000"
+        android:textSize="20dp" />
 
     <Button
+        android:id="@+id/logout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/logout"
         android:layout_below="@+id/user_email"
-        android:text="Logout"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="127dp"
+        android:text="Logout" />
+
+    <Switch
+        android:id="@+id/collectSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_email"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="61dp"
+
+        android:text="Start Collecting  " />
+
 
 </RelativeLayout>
