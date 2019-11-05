@@ -407,23 +407,7 @@ public class CollectService extends IntentService {
 
     private void verifyBeacon() {
         Query beacon = db.collection("Beacons").whereEqualTo("UID", "2");
-        beacon.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    QuerySnapshot doc = task.getResult();
-                    StringBuilder fields = new StringBuilder("");
-                    fields.append("Name: ").append(doc.get("Name"));
-                    fields.append("\nEmail: ").append(doc.get("Email"));
-                    fields.append("\nPhone: ").append(doc.get("Phone"));
-                }
-            }
-        })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                    }
-                });
+
     }
 
 }
